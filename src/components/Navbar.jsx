@@ -9,9 +9,14 @@ const Navbar = () => {
         <div className='h-20 bg-black text-white font-medium text-3xl flex justify-center items-center gap-6'>
 
             <Link to="/">Home</Link>
-            <Link to="/dashboard">Dashboard</Link>
+
             {
-                !isLogin && (
+                isLogin ? (
+                    <>
+                        <Link to="/dashboard">Dashboard</Link>
+                        <Link to="/product">Product</Link>
+                    </>
+                ) : (
                     <>
                         <Link to="/login">Login</Link>
                         <Link to="/sign-up">Sign up</Link>
