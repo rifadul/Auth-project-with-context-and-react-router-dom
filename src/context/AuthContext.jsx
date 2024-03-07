@@ -1,7 +1,7 @@
 import React, { createContext, useContext, useState } from 'react';
 import axios from 'axios';
 const AuthContext = createContext();
-const BASE_URL = 'http://192.168.10.61:5002/v1';
+const BASE_URL = 'https://api.palooi.us/v1';
 
 // Create AuthProvider component
 export const AuthProvider = ({ children }) => {
@@ -32,9 +32,6 @@ export const AuthProvider = ({ children }) => {
                 email,
                 password,
             });
-
-            console.log('response', response.data);
-            const token = response.data.token;
             login(response.data);
 
             return { success: true };
